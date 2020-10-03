@@ -1,4 +1,4 @@
-module github.com/ohatakky/rss
+module github.com/ohatakky/ohatakkyp
 
 go 1.14
 

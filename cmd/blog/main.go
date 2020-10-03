@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/ohatakky/rss/pkg/rss"
+	"github.com/ohatakky/ohatakkyp/pkg/rss"
 )
 
 var (
