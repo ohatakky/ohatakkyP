@@ -1,11 +1,13 @@
 ## [@ohatakkyP](https://twitter.com/ohatakkyP)
 
-![エビフライトライアングル](https://pbs.twimg.com/profile_images/1311648413960695809/iquaXdoD_400x400.jpg "ohatakkyP")
+![アイコン](https://pbs.twimg.com/profile_images/1311648413960695809/iquaXdoD_400x400.jpg "ohatakkyP")
 
 
 日々、情報収集に励んでおりますピ。
 
-### 収集リスト
+
+### 仕事
+更新頻度の高い技術ブログとトレンドのgithub repositoryを少々
 - [cdata](https://www.cdatablog.jp)
 - [future-architect](https://future-architect.github.io)
 - [google](https://developers-jp.googleblog.com)
