@@ -29,7 +29,7 @@ func Exec() error {
 	if err != nil {
 		return err
 	}
-	job, err := scheduler.GetJob(ctx, "test")
+	job, err := scheduler.GetJob(ctx, os.Getenv("GCP_SCHEDULER_BLOG_ID"))
 	if err != nil {
 		return err
 	}

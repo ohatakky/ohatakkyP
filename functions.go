@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/ohatakky/ohatakkyp/cmd/blog"
+	"github.com/ohatakky/ohatakkyp/functions/blog"
 )
 
 func BlogHandler(w http.ResponseWriter, r *http.Request) {

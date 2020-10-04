@@ -6,7 +6,6 @@ import (
 	"time"
 
 	scheduler "cloud.google.com/go/scheduler/apiv1beta1"
-	"google.golang.org/api/option"
 	schedulerpb "google.golang.org/genproto/googleapis/cloud/scheduler/v1beta1"
 )
 
@@ -17,7 +16,8 @@ type Client struct {
 }
 
 func New(ctx context.Context, project, location string) (*Client, error) {
-	c, err := scheduler.NewCloudSchedulerClient(ctx, option.WithCredentialsFile("./cred.json"))
+	// c, err := scheduler.NewCloudSchedulerClient(ctx, option.WithCredentialsFile("./cred.json"))
+	c, err := scheduler.NewCloudSchedulerClient(ctx)
 	if err != nil {
 		return nil, err
 	}
