@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/joho/godotenv"
-
 	"github.com/ohatakky/ohatakkyp/pkg/rss"
 	"github.com/ohatakky/ohatakkyp/pkg/schedule"
 	"github.com/ohatakky/ohatakkyp/pkg/tweet"
@@ -24,10 +22,6 @@ var (
 		"https://developer.hatenastaff.com/rss",
 	}
 )
-
-func init() {
-	godotenv.Load()
-}
 
 func Exec() error {
 	ctx := context.Background()
