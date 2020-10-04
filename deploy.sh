@@ -12,7 +12,11 @@ function blog_function() {
 
 # https://cloud.google.com/scheduler/docs/http-target-auth?hl=ja#using-gcloud
 function blog_scheduler() {
-  gcloud scheduler jobs create http --schedule="every 15 mins" --uri=${BLOG_FUNCTION_URI} --oidc-service-account-email=${BLOG_FUNCTION_SERVICE_ACCOUNT} --time-zone="Asia/Tokyo"
+  gcloud scheduler jobs create BlogScheduler http \
+  --schedule="every 15 mins" \
+  --time-zone="Asia/Tokyo" \
+  --uri=${BLOG_FUNCTION_URI} \
+  --oidc-service-account-email=${BLOG_FUNCTION_SERVICE_ACCOUNT}
 }
 
 $1
