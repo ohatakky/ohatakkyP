@@ -5,7 +5,7 @@
 
 日々、情報収集に励んでおりますピ。
 
-## List
+## 収集リスト
 - [cdata](https://www.cdatablog.jp)
 - [future-architect](https://future-architect.github.io)
 - [google](https://developers-jp.googleblog.com)
