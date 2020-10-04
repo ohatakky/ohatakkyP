@@ -14,6 +14,7 @@ import (
 
 var (
 	urls = []string{
+		"https://www.cdatablog.jp/rss",
 		"https://future-architect.github.io/atom.xml",
 		"https://buildersbox.corp-sansan.com/rss",
 		"https://developers-jp.googleblog.com/atom.xml",

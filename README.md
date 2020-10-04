@@ -6,11 +6,11 @@
 日々、情報収集に励んでおりますピ。
 
 ## List
-- [cdata](https://www.cdatablog)
+- [cdata](https://www.cdatablog.jp)
 - [future-architect](https://future-architect.github.io)
 - [google](https://developers-jp.googleblog.com)
 - [mercari](https://engineering.mercari.com/blog)
-- [m3](https://www.m3tech.blog/feed)
+- [m3](https://www.m3tech.blog)
 - [hatena](https://developer.hatenastaff.com)
 - [sansan](https://buildersbox.corp-sansan.com)
 - [zozo](https://techblog.zozo.com)
