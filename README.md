@@ -1,5 +1,16 @@
-## ohatakkyP
+## [@ohatakkyP](https://twitter.com/ohatakkyP)
 
-[@ohatakkyP](https://twitter.com/ohatakkyP)は[@ohatakky](https://twitter.com/ohatakky)の家来です。
+![エビフライトライアングル](https://pbs.twimg.com/profile_images/1311648413960695809/iquaXdoD_400x400.jpg "ohatakkyP")
 
 
+日々、情報収集に励んでおりますピ。
+
+## List
+- [cdata](https://www.cdatablog)
+- [future-architect](https://future-architect.github.io)
+- [google](https://developers-jp.googleblog.com)
+- [mercari](https://engineering.mercari.com/blog)
+- [m3](https://www.m3tech.blog/feed)
+- [hatena](https://developer.hatenastaff.com)
+- [sansan](https://buildersbox.corp-sansan.com)
+- [zozo](https://techblog.zozo.com)

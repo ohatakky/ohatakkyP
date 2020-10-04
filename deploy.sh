@@ -1,7 +1,12 @@
 #!/bin/sh
 
 function blog_function() {
-  gcloud functions deploy BlogHTTP --runtime go113 --trigger-http --entry-point=BlogHandler --region=asia-northeast1 --ingress-settings=internal-only --env-vars-file .env.yaml
+  gcloud functions deploy BlogHTTP --runtime go113 \
+  --trigger-http \
+  --entry-point=BlogHandler \
+  --region=asia-northeast1 \
+  --env-vars-file .env.yaml
+  # --ingress-settings=internal-only \
 }
 
 

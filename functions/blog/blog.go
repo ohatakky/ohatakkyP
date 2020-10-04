@@ -16,6 +16,12 @@ var (
 	urls = []string{
 		"https://future-architect.github.io/atom.xml",
 		"https://buildersbox.corp-sansan.com/rss",
+		"https://developers-jp.googleblog.com/atom.xml",
+		"https://techblog.zozo.com/rss",
+		"https://www.m3tech.blog/feed",
+		"https://engineering.mercari.com/blog/feed.xml",
+		"https://developer.hatenastaff.com/rss",
+		"https://www.cdatablog.jp/rss",
 	}
 )
 
@@ -34,7 +40,7 @@ func Exec() error {
 		return err
 	}
 
-	twitter := tweet.New(os.Getenv(""), os.Getenv(""), os.Getenv(""), os.Getenv(""))
+	twitter := tweet.New(os.Getenv("API_KEY"), os.Getenv("API_SECRET"), os.Getenv("ACCESS_TOKEN"), os.Getenv("ACCESS_TOKEN_SECRET"))
 
 	reader := rss.New()
 	feeds := reader.Read(urls)
