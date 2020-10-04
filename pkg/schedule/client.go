@@ -6,6 +6,7 @@ import (
 	"time"
 
 	scheduler "cloud.google.com/go/scheduler/apiv1beta1"
+	"google.golang.org/api/option"
 	schedulerpb "google.golang.org/genproto/googleapis/cloud/scheduler/v1beta1"
 )
 
@@ -16,7 +17,7 @@ type Client struct {
 }
 
 func New(ctx context.Context, project, location string) (*Client, error) {
-	c, err := scheduler.NewCloudSchedulerClient(ctx)
+	c, err := scheduler.NewCloudSchedulerClient(ctx, option.WithCredentialsFile("./cred.json"))
 	if err != nil {
 		return nil, err
 	}
@@ -24,17 +25,16 @@ func New(ctx context.Context, project, location string) (*Client, error) {
 }
 
 type Job struct {
-	ExecTime time.Time
+	LastAttemptTime time.Time
 }
 
-func (c *Client) PrevJob(ctx context.Context) (*Job, error) {
-	it := c.service.ListJobs(ctx, &schedulerpb.ListJobsRequest{
-		Parent: fmt.Sprintf("projects/%s/locations/%s", c.project, c.location),
+func (c *Client) GetJob(ctx context.Context, jobID string) (*Job, error) {
+	job, err := c.service.GetJob(ctx, &schedulerpb.GetJobRequest{
+		Name: fmt.Sprintf("projects/%s/locations/%s/jobs/%s", c.project, c.location, jobID),
 	})
-	job, err := it.Next()
 	if err != nil {
 		return nil, err
 	}
 
-	return &Job{ExecTime: job.LastAttemptTime.AsTime()}, nil
+	return &Job{LastAttemptTime: job.LastAttemptTime.AsTime()}, nil
 }

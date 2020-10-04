@@ -15,7 +15,7 @@ func New() *RSSReader {
 type Feed struct {
 	Title     string
 	Link      string
-	Published *time.Time
+	Published time.Time
 }
 
 func (*RSSReader) Read(urls []string) []*Feed {
@@ -28,7 +28,7 @@ func (*RSSReader) Read(urls []string) []*Feed {
 		}
 
 		for _, item := range feed.Items {
-			res = append(res, &Feed{Title: item.Title, Link: item.Link, Published: item.PublishedParsed})
+			res = append(res, &Feed{Title: item.Title, Link: item.Link, Published: *item.PublishedParsed})
 		}
 	}
 	return res

@@ -1,9 +1,15 @@
 package blog
 
 import (
-	"log"
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/joho/godotenv"
 
 	"github.com/ohatakky/ohatakkyp/pkg/rss"
+	"github.com/ohatakky/ohatakkyp/pkg/schedule"
+	"github.com/ohatakky/ohatakkyp/pkg/tweet"
 )
 
 var (
@@ -14,25 +20,34 @@ var (
 )
 
 func init() {
-	// todo: init config
+	godotenv.Load()
 }
 
-func Exec() {
-	reader := rss.New()
-	feeds := reader.Read(urls)
-	for _, feed := range feeds {
-		log.Println(feed)
-		// todo: 前回バッチ実時時間以降のフィードをツイート
+func Exec() error {
+	ctx := context.Background()
+	scheduler, err := schedule.New(ctx, os.Getenv("GCP_PROJECT"), os.Getenv("GCP_REGION_SCHEDULER"))
+	if err != nil {
+		return err
+	}
+	job, err := scheduler.GetJob(ctx, "test")
+	if err != nil {
+		return err
 	}
 
-	// 	ctx := context.Background()
-	// 	scheduler, err := schedule.New(ctx, os.Getenv("GCP_PROJECT"), os.Getenv("GCP_REGION_SCHEDULER"))
-	// 	if err != nil {
-	// 		log.Fatal(err)
-	// 	}
-	// 	job, err := scheduler.PrevJob(ctx)
-	// 	if err != nil {
-	// 		log.Fatal(err)
-	// 	}
-	// 	fmt.Println(job)
+	twitter := tweet.New(os.Getenv(""), os.Getenv(""), os.Getenv(""), os.Getenv(""))
+
+	reader := rss.New()
+	feeds := reader.Read(urls)
+	feeds = feeds[:5] // note: avoid limited on the twitter API
+	for _, feed := range feeds {
+		if feed.Published.After(job.LastAttemptTime) {
+			content := fmt.Sprintf("%s %s", feed.Title, feed.Link)
+			err := twitter.Tweet(content)
+			if err != nil {
+				continue
+			}
+		}
+	}
+
+	return nil
 }

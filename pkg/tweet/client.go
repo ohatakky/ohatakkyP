@@ -1,11 +1,11 @@
-package twitter
+package tweet
 
 import (
 	"github.com/ChimeraCoder/anaconda"
 )
 
 type Client struct {
-	*anaconda.TwitterApi
+	service *anaconda.TwitterApi
 }
 
 func New(consumerKey, consumerSecret, accessToken, accessTokenSecret string) *Client {
@@ -16,6 +16,6 @@ func New(consumerKey, consumerSecret, accessToken, accessTokenSecret string) *Cl
 }
 
 func (c *Client) Tweet(message string) error {
-	_, err := c.PostTweet(message, nil)
+	_, err := c.service.PostTweet(message, nil)
 	return err
 }
