@@ -1,9 +1,15 @@
 package trending
 
-import "net/http"
+import (
+	"log"
+	"net/http"
+
+	"github.com/PuerkitoBio/goquery"
+)
 
 // curl https://ghapi.huchen.dev/repositories?since=daily | jq .
-const endpoint = "https://ghapi.huchen.dev/repositories?since=daily"
+// const endpoint = "https://ghapi.huchen.dev/repositories?since=daily"
+const endpoint = "https://github.com/trending"
 
 type Client struct{}
 
@@ -12,16 +18,34 @@ func New() *Client {
 }
 
 type Item struct {
-	Title string
-	Link  string
+	Link string
 }
 
 func (*Client) Read() ([]*Item, error) {
 	resp, err := http.Get(endpoint)
 	if err != nil {
-		return nil, err
+		log.Fatal(err)
 	}
 	defer resp.Body.Close()
 
-	return nil, nil
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	articles := doc.Find("article")
+	items := make([]*Item, 0, articles.Length())
+	articles.Each(func(i int, s *goquery.Selection) {
+		h1 := s.Find("h1").First()
+		a := h1.Find("a").First()
+		link, exist := a.Attr("href")
+		if !exist {
+			return
+		}
+		items = append(items, &Item{
+			Link: "https://github.com" + link,
+		})
+	})
+
+	return items, nil
 }
