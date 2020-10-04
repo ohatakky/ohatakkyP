@@ -22,7 +22,6 @@ var (
 		"https://www.m3tech.blog/feed",
 		"https://engineering.mercari.com/blog/feed.xml",
 		"https://developer.hatenastaff.com/rss",
-		"https://www.cdatablog.jp/rss",
 	}
 )
 
