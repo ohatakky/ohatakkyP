@@ -23,6 +23,8 @@ var (
 		"https://developer.hatenastaff.com/rss",
 		"https://medium.com/feed/studist-dev",
 		"https://aws.amazon.com/jp/blogs/news/feed",
+		"https://eng.uber.com/feed",
+		"https://medium.com/feed/airbnb-engineering",
 		// "https://cloud.google.com/feeds/gcp-release-notes.xml",
 	}
 )

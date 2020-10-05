@@ -1,6 +1,7 @@
 package rss
 
 import (
+	"log"
 	"sync"
 	"time"
 
@@ -29,6 +30,7 @@ func (*RSSReader) Read(urls []string) []*Feed {
 			fp := gofeed.NewParser()
 			feed, err := fp.ParseURL(u)
 			if err != nil {
+				log.Println(err)
 				return
 			}
 			for _, item := range feed.Items {
