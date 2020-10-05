@@ -4,15 +4,3 @@
 
 
 日々、情報収集に励んでおりますピ。
-
-
-### 仕事
-更新頻度の高い技術ブログとトレンドのgithub repositoryを少々
-- [cdata](https://www.cdatablog.jp)
-- [future-architect](https://future-architect.github.io)
-- [google](https://developers-jp.googleblog.com)
-- [mercari](https://engineering.mercari.com/blog)
-- [m3](https://www.m3tech.blog)
-- [hatena](https://developer.hatenastaff.com)
-- [sansan](https://buildersbox.corp-sansan.com)
-- [zozo](https://techblog.zozo.com)

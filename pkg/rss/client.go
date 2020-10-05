@@ -18,6 +18,7 @@ type Feed struct {
 	Published time.Time
 }
 
+// todo: goroutine
 func (*RSSReader) Read(urls []string) []*Feed {
 	res := make([]*Feed, 0)
 	for _, url := range urls {

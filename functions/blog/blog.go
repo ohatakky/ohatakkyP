@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/ohatakky/ohatakkyp/pkg/rss"
 	"github.com/ohatakky/ohatakkyp/pkg/schedule"
@@ -46,6 +47,7 @@ func Exec() error {
 			if err != nil {
 				continue
 			}
+			time.Sleep(5 * time.Second)
 		}
 	}
 

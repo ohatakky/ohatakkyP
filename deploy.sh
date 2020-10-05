@@ -28,7 +28,7 @@ function trending_function() {
 
 function trending_scheduler() {
   gcloud scheduler jobs create TrendingScheduler http \
-  --schedule="* */12 * * *" \
+  --schedule="0 10 * * *" \
   --time-zone="Asia/Tokyo" \
   --uri=${BLOG_FUNCTION_URI} \
   --oidc-service-account-email=${BLOG_FUNCTION_SERVICE_ACCOUNT}
