@@ -1,6 +1,7 @@
 package rss
 
 import (
+	"sync"
 	"time"
 
 	"github.com/mmcdole/gofeed"
@@ -18,19 +19,24 @@ type Feed struct {
 	Published time.Time
 }
 
-// todo: goroutine
 func (*RSSReader) Read(urls []string) []*Feed {
 	res := make([]*Feed, 0)
+	wg := &sync.WaitGroup{}
 	for _, url := range urls {
-		fp := gofeed.NewParser()
-		feed, err := fp.ParseURL(url)
-		if err != nil {
-			continue
-		}
-
-		for _, item := range feed.Items {
-			res = append(res, &Feed{Title: item.Title, Link: item.Link, Published: *item.PublishedParsed})
-		}
+		wg.Add(1)
+		go func(u string) {
+			defer wg.Done()
+			fp := gofeed.NewParser()
+			feed, err := fp.ParseURL(u)
+			if err != nil {
+				return
+			}
+			for _, item := range feed.Items {
+				res = append(res, &Feed{Title: item.Title, Link: item.Link, Published: *item.PublishedParsed})
+			}
+		}(url)
 	}
+	wg.Wait()
+
 	return res
 }

@@ -21,6 +21,9 @@ var (
 		"https://www.m3tech.blog/feed",
 		"https://engineering.mercari.com/blog/feed.xml",
 		"https://developer.hatenastaff.com/rss",
+		"https://medium.com/feed/studist-dev",
+		"https://aws.amazon.com/jp/blogs/news/feed",
+		// "https://cloud.google.com/feeds/gcp-release-notes.xml",
 	}
 )
 
@@ -39,16 +42,23 @@ func Exec() error {
 
 	reader := rss.New()
 	feeds := reader.Read(urls)
-	feeds = feeds[:5] // note: avoid limited on the twitter API
+	cnt := 0
 	for _, feed := range feeds {
-		if feed.Published.After(job.LastAttemptTime) {
-			content := fmt.Sprintf("%s %s", feed.Title, feed.Link)
-			err := twitter.Tweet(content)
-			if err != nil {
-				continue
-			}
-			time.Sleep(5 * time.Second)
+		// todo: schedule queue
+		if cnt >= 5 { // note: avoid limited on the twitter API
+			break
 		}
+		if feed.Published.Before(job.LastAttemptTime) {
+			continue
+		}
+
+		err := twitter.Tweet(fmt.Sprintf("%s %s", feed.Title, feed.Link))
+		if err != nil {
+			continue
+		}
+
+		cnt++
+		time.Sleep(3 * time.Second)
 	}
 
 	return nil
