@@ -5,6 +5,7 @@ function blog_function() {
   --trigger-http \
   --entry-point=BlogHandler \
   --region=asia-northeast1 \
+  --timeout=540 \
   --env-vars-file .env.yaml
   # --ingress-settings=internal-only \
 }
