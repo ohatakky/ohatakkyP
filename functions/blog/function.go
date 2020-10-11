@@ -43,12 +43,9 @@ func Exec() error {
 
 	reader := rss.New()
 	feeds := reader.Read(urls)
-	cnt := 0
+
+	// todo: schedule queue
 	for _, feed := range feeds {
-		// todo: schedule queue
-		if cnt >= 5 { // note: avoid limited on the twitter API
-			break
-		}
 		if feed.Published.Before(job.LastAttemptTime) {
 			continue
 		}
@@ -58,7 +55,6 @@ func Exec() error {
 			continue
 		}
 
-		cnt++
 		time.Sleep(3 * time.Second)
 	}
 
