@@ -12,7 +12,7 @@ function blog_function() {
 
 function blog_scheduler() {
   gcloud scheduler jobs create BlogScheduler http \
-  --schedule="*/30 * * * *" \
+  --schedule="*/15 * * * *" \
   --time-zone="Asia/Tokyo" \
   --uri=${BLOG_FUNCTION_URI} \
   --oidc-service-account-email=${BLOG_FUNCTION_SERVICE_ACCOUNT}

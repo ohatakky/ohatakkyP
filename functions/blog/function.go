@@ -25,6 +25,7 @@ var (
 		"https://eng.uber.com/feed",
 		"https://medium.com/feed/airbnb-engineering",
 		"https://jp.techcrunch.com/feed",
+		"https://medium.com/feed/google-cloud",
 	}
 )
 
@@ -55,7 +56,7 @@ func Exec() error {
 			continue
 		}
 
-		time.Sleep(3 * time.Second)
+		time.Sleep(5 * time.Second)
 	}
 
 	return nil
