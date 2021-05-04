@@ -13,7 +13,6 @@ import (
 
 var (
 	urls = []string{
-		"https://www.cdatablog.jp/rss",
 		"https://future-architect.github.io/atom.xml",
 		"https://buildersbox.corp-sansan.com/rss",
 		"https://developers-jp.googleblog.com/atom.xml",
@@ -24,8 +23,12 @@ var (
 		"https://medium.com/feed/studist-dev",
 		"https://eng.uber.com/feed",
 		"https://medium.com/feed/airbnb-engineering",
-		"https://jp.techcrunch.com/feed",
 		"https://medium.com/feed/google-cloud",
+
+		//
+		"https://jp.techcrunch.com/feed",
+		"https://news.crunchbase.com/feed",
+		"https://techable.jp/feed",
 	}
 )
 
