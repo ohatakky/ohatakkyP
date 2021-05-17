@@ -29,6 +29,11 @@ var (
 		"https://jp.techcrunch.com/feed",
 		"https://news.crunchbase.com/feed",
 		"https://techable.jp/feed",
+		"https://koheeiokubo.substack.com/feed",
+		"https://note.com/okb777/rss",
+		"https://prtimes.jp/index.rdf",
+		"http://feeds.feedburner.com/SdJapan",
+		"https://note.com/0915hikaru/rss",
 	}
 )
 
