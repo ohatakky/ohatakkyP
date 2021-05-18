@@ -57,22 +57,18 @@ func Exec() error {
 	if err != nil {
 		return err
 	}
+	twitter := tweet.New(os.Getenv("API_KEY"), os.Getenv("API_SECRET"), os.Getenv("ACCESS_TOKEN"), os.Getenv("ACCESS_TOKEN_SECRET"))
+	reader := rss.New()
+
 	job, err := scheduler.GetJob(ctx, os.Getenv("GCP_SCHEDULER_BLOG_ID"))
 	if err != nil {
 		return err
 	}
-
-	twitter := tweet.New(os.Getenv("API_KEY"), os.Getenv("API_SECRET"), os.Getenv("ACCESS_TOKEN"), os.Getenv("ACCESS_TOKEN_SECRET"))
-
-	reader := rss.New()
 	feeds := reader.Read(urls)
-
-	// todo: schedule queue
 	for _, feed := range feeds {
 		if feed.Published.Before(job.LastAttemptTime) {
 			continue
 		}
-
 		err := twitter.Tweet(fmt.Sprintf("%s %s", feed.Title, feed.Link))
 		if err != nil {
 			continue

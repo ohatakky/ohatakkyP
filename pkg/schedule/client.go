@@ -16,7 +16,6 @@ type Client struct {
 }
 
 func New(ctx context.Context, project, location string) (*Client, error) {
-	// c, err := scheduler.NewCloudSchedulerClient(ctx, option.WithCredentialsFile("./cred.json"))
 	c, err := scheduler.NewCloudSchedulerClient(ctx)
 	if err != nil {
 		return nil, err
