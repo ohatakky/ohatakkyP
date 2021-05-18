@@ -28,12 +28,15 @@ var (
 
 		// media
 		"https://news.ycombinator.com/rss",
-		"https://jp.techcrunch.com/feed",
 		"https://techcrunch.com/feed",
+		"https://a16z.com/feed",
 		"https://news.crunchbase.com/feed",
+
+		// media
+		"https://jp.techcrunch.com/feed",
 		"https://techable.jp/feed",
 		"https://www.businessinsider.jp/feed/index.xml",
-		"https://a16z.com/feed",
+		"https://techblitz.com/feed",
 
 		// personal media
 		"https://koheeiokubo.substack.com/feed",
