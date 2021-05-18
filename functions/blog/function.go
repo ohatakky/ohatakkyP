@@ -46,6 +46,7 @@ var (
 		"https://note.com/okb777/rss",
 		"https://note.com/0915hikaru/rss",
 		"https://koheeiokubo.substack.com/feed",
+		"https://note.com/hirohirohayahaya/rss",
 		"https://digitalnative.substack.com/feed",
 		"https://theprofile.substack.com/feed",
 	}
