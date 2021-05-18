@@ -34,6 +34,7 @@ var (
 		"https://36kr.jp/feed",
 		"https://www.visualcapitalist.com/feed",
 		"https://cerealtalk.jp/feed",
+		"https://influencermarketinghub.com/feed",
 
 		// 国内メディア
 		"https://jp.techcrunch.com/feed",
