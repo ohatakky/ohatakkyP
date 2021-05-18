@@ -13,6 +13,7 @@ import (
 
 var (
 	urls = []string{
+		// tech
 		"https://future-architect.github.io/atom.xml",
 		"https://buildersbox.corp-sansan.com/rss",
 		"https://developers-jp.googleblog.com/atom.xml",
@@ -25,14 +26,18 @@ var (
 		"https://medium.com/feed/airbnb-engineering",
 		"https://medium.com/feed/google-cloud",
 
-		//
+		// media
+		"https://news.ycombinator.com/rss",
 		"https://jp.techcrunch.com/feed",
+		"https://techcrunch.com/feed",
 		"https://news.crunchbase.com/feed",
 		"https://techable.jp/feed",
+		"https://www.businessinsider.jp/feed/index.xml",
+		"https://a16z.com/feed",
+
+		// personal media
 		"https://koheeiokubo.substack.com/feed",
 		"https://note.com/okb777/rss",
-		"https://prtimes.jp/index.rdf",
-		"http://feeds.feedburner.com/SdJapan",
 		"https://note.com/0915hikaru/rss",
 	}
 )
@@ -64,7 +69,7 @@ func Exec() error {
 			continue
 		}
 
-		time.Sleep(5 * time.Second)
+		time.Sleep(10 * time.Second)
 	}
 
 	return nil
