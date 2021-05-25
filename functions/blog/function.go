@@ -49,6 +49,10 @@ var (
 		"https://note.com/hirohirohayahaya/rss",
 		"https://digitalnative.substack.com/feed",
 		"https://theprofile.substack.com/feed",
+
+		// podcasts
+		"https://anchor.fm/s/4f8170dc/podcast/rss",
+		"https://anchor.fm/s/7369a14/podcast/rss",
 	}
 )
 
