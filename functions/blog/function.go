@@ -41,6 +41,7 @@ var (
 		"https://techable.jp/feed",
 		"https://www.businessinsider.jp/feed/index.xml",
 		"https://techblitz.com/feed",
+		"https://note.com/offtopic/rss",
 
 		// 個人メディア
 		"https://note.com/okb777/rss",
