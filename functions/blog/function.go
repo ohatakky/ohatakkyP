@@ -13,7 +13,7 @@ import (
 
 var (
 	urls = []string{
-		// 技術
+		// tech blog
 		"https://future-architect.github.io/atom.xml",
 		"https://buildersbox.corp-sansan.com/rss",
 		"https://developers-jp.googleblog.com/atom.xml",
@@ -26,32 +26,34 @@ var (
 		"https://medium.com/feed/airbnb-engineering",
 		"https://medium.com/feed/google-cloud",
 
-		// 海外メディア
-		"https://news.ycombinator.com/rss",
-		"https://techcrunch.com/feed",
-		"https://a16z.com/feed",
-		"https://news.crunchbase.com/feed",
-		"https://36kr.jp/feed",
-		"https://www.visualcapitalist.com/feed",
-		"https://cerealtalk.jp/feed",
-		"https://influencermarketinghub.com/feed",
-
-		// 国内メディア
+		// media
+		// "https://news.ycombinator.com/rss",
+		// "https://techcrunch.com/feed",
+		// "https://a16z.com/feed",
+		// "https://news.crunchbase.com/feed",
+		// "https://36kr.jp/feed",
+		// "https://www.visualcapitalist.com/feed",
+		// "https://cerealtalk.jp/feed",
+		// "https://influencermarketinghub.com/feed",
 		"https://jp.techcrunch.com/feed",
 		"https://techable.jp/feed",
 		"https://www.businessinsider.jp/feed/index.xml",
 		"https://techblitz.com/feed",
 		"https://note.com/offtopic/rss",
 
-		// 個人メディア
+		// note
 		"https://note.com/okb777/rss",
 		"https://note.com/0915hikaru/rss",
-		"https://koheeiokubo.substack.com/feed",
 		"https://note.com/hirohirohayahaya/rss",
+
+		// substack
+		"https://koheeiokubo.substack.com/feed",
 		"https://digitalnative.substack.com/feed",
 		"https://theprofile.substack.com/feed",
+		"https://digitalnative.substack.com/feed",
+		"https://ishicoro.substack.com/feed",
 
-		// podcasts
+		// podcast
 		"https://anchor.fm/s/4f8170dc/podcast/rss",
 		"https://anchor.fm/s/7369a14/podcast/rss",
 	}
