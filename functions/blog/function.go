@@ -25,6 +25,7 @@ var (
 		"https://eng.uber.com/feed",
 		"https://medium.com/feed/airbnb-engineering",
 		"https://medium.com/feed/google-cloud",
+		"https://techblog.gaudiy.com/rss",
 
 		// media
 		// "https://news.ycombinator.com/rss",
@@ -43,7 +44,6 @@ var (
 
 		// note
 		"https://note.com/okb777/rss",
-		"https://note.com/0915hikaru/rss",
 		"https://note.com/hirohirohayahaya/rss",
 
 		// substack
