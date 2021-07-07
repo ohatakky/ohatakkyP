@@ -1,6 +1,8 @@
 package rss
 
 import (
+	"context"
+	"fmt"
 	"log"
 	"sync"
 	"time"
@@ -20,17 +22,19 @@ type Feed struct {
 	Published time.Time
 }
 
-func (*RSSReader) Read(urls []string) []*Feed {
+func (*RSSReader) Read(ctx context.Context, urls []string) []*Feed {
 	res := make([]*Feed, 0)
 	wg := &sync.WaitGroup{}
+
+	fmt.Println("-------- start rss reader ------------")
 	for _, url := range urls {
 		wg.Add(1)
 		go func(u string) {
 			defer wg.Done()
 			fp := gofeed.NewParser()
-			feed, err := fp.ParseURL(u)
+			feed, err := fp.ParseURLWithContext(u, ctx)
 			if err != nil {
-				log.Println(err)
+				log.Println("error: occured by parseURL >>> ", err)
 				return
 			}
 			for _, item := range feed.Items {
@@ -39,6 +43,7 @@ func (*RSSReader) Read(urls []string) []*Feed {
 		}(url)
 	}
 	wg.Wait()
+	fmt.Println("-------- done rss reader ------------")
 
 	return res
 }

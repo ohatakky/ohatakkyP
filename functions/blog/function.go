@@ -13,49 +13,49 @@ import (
 
 var (
 	urls = []string{
-		// tech blog
-		"https://future-architect.github.io/atom.xml",
-		"https://buildersbox.corp-sansan.com/rss",
-		"https://developers-jp.googleblog.com/atom.xml",
-		"https://techblog.zozo.com/rss",
-		"https://www.m3tech.blog/feed",
-		"https://engineering.mercari.com/blog/feed.xml",
-		"https://developer.hatenastaff.com/rss",
-		"https://medium.com/feed/studist-dev",
-		"https://eng.uber.com/feed",
-		"https://medium.com/feed/airbnb-engineering",
-		"https://medium.com/feed/google-cloud",
-
-		// media
-		// "https://news.ycombinator.com/rss",
-		// "https://techcrunch.com/feed",
-		// "https://a16z.com/feed",
-		// "https://news.crunchbase.com/feed",
-		// "https://36kr.jp/feed",
-		// "https://www.visualcapitalist.com/feed",
-		// "https://cerealtalk.jp/feed",
-		// "https://influencermarketinghub.com/feed",
-		"https://jp.techcrunch.com/feed",
-		"https://techable.jp/feed",
-		"https://www.businessinsider.jp/feed/index.xml",
-		"https://techblitz.com/feed",
-		"https://note.com/offtopic/rss",
-
-		// note
-		"https://note.com/okb777/rss",
-		"https://note.com/0915hikaru/rss",
-		"https://note.com/hirohirohayahaya/rss",
-
-		// substack
-		"https://koheeiokubo.substack.com/feed",
+		"https://coin98analytics.substack.com/feed",
+		"https://todayindefi.substack.com/feed",
+		"https://banklessdao.substack.com/feed",
+		"https://newsletter.banklesshq.com/feed",
+		"https://newsletter.thedefiant.io/feed",
+		"https://ethhub.substack.com/feed",
+		"https://ournetwork.substack.com/feed",
+		"https://defiprime.substack.com/feed",
+		"https://defiweekly.substack.com/feed",
+		"https://aavenews.substack.com/feed",
+		"https://yieldfarmer.substack.com/feed",
+		"https://distroid.substack.com/feed",
 		"https://digitalnative.substack.com/feed",
-		"https://theprofile.substack.com/feed",
-		"https://digitalnative.substack.com/feed",
-		"https://ishicoro.substack.com/feed",
 
-		// podcast
-		"https://anchor.fm/s/4f8170dc/podcast/rss",
-		"https://anchor.fm/s/7369a14/podcast/rss",
+		"https://vitalik.ca/feed.xml",
+		"https://balajis.com/author/balajis/rss",
+		"https://learnhax.substack.com/feed",
+		"https://www.uncomfortableprofit.com/feed",
+		"https://lootproject.substack.com/feed",
+		"https://jarvislabs.substack.com/feed",
+		"https://robdog.substack.com/feed",
+		"https://creatoreconomy.so/feed",
+		"https://yearn.substack.com/feed",
+		"https://www.notboring.co/feed",
+		"https://kinjalshah.substack.com/feed",
+		"https://nickwidmer.substack.com/feed",
+		"https://simondlr.substack.com/feed",
+		"https://thedailygwei.substack.com/feed",
+		"https://newsletter.withtally.com/feed",
+		"https://doseofdefi.substack.com/feed",
+		"https://willywoo.substack.com/feed",
+		"https://bspeak.substack.com/feed",
+		"https://nobumei.substack.com/feed",
+
+		"https://messari.io/rss",
+		"https://dappradar.com/blog/feed",
+		"https://insights.glassnode.com/rss",
+		"https://blog.mycrypto.com/rss",
+		"https://future.a16z.com/feed",
+		"https://finematics.com/feed",
+
+		"https://decrypt.co/feed",
+		"https://dailyhodl.com/feed",
 	}
 )
 
@@ -72,7 +72,7 @@ func Exec() error {
 	if err != nil {
 		return err
 	}
-	feeds := reader.Read(urls)
+	feeds := reader.Read(ctx, urls)
 	for _, feed := range feeds {
 		if feed.Published.Before(job.LastAttemptTime) {
 			continue
