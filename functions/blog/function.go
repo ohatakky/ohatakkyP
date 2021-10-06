@@ -13,6 +13,7 @@ import (
 
 var (
 	urls = []string{
+		// newsletter
 		"https://coin98analytics.substack.com/feed",
 		"https://todayindefi.substack.com/feed",
 		"https://banklessdao.substack.com/feed",
@@ -24,18 +25,27 @@ var (
 		"https://defiweekly.substack.com/feed",
 		"https://aavenews.substack.com/feed",
 		"https://yieldfarmer.substack.com/feed",
-		"https://distroid.substack.com/feed",
 		"https://digitalnative.substack.com/feed",
+		"https://rewilder.substack.com/feed",
+		"https://axie.substack.com/feed",
+		"https://cryptex.substack.com/feed",
+		"https://weekinethereumnews.com/feed",
+		"https://dunedigest.substack.com/feed",
+		"https://epns.substack.com/feed",
 
-		"https://vitalik.ca/feed.xml",
-		"https://balajis.com/author/balajis/rss",
+		// personal newsletter
+		"https://www.platformer.news/feed",
+		"https://li.substack.com/feed",
+		"https://midroni.substack.com/feed",
+		"https://pizzaparty.substack.com/feed",
+		"https://dovemountain.substack.com/feed",
+		"https://davidphelps.substack.com/feed",
 		"https://learnhax.substack.com/feed",
 		"https://www.uncomfortableprofit.com/feed",
 		"https://lootproject.substack.com/feed",
 		"https://jarvislabs.substack.com/feed",
 		"https://robdog.substack.com/feed",
 		"https://creatoreconomy.so/feed",
-		"https://yearn.substack.com/feed",
 		"https://www.notboring.co/feed",
 		"https://kinjalshah.substack.com/feed",
 		"https://nickwidmer.substack.com/feed",
@@ -46,16 +56,28 @@ var (
 		"https://willywoo.substack.com/feed",
 		"https://bspeak.substack.com/feed",
 		"https://nobumei.substack.com/feed",
+		"https://oji3.substack.com/feed",
 
+		// blog
 		"https://messari.io/rss",
-		"https://dappradar.com/blog/feed",
 		"https://insights.glassnode.com/rss",
 		"https://blog.mycrypto.com/rss",
+		"https://dappradar.com/blog/feed",
 		"https://future.a16z.com/feed",
 		"https://finematics.com/feed",
+		"https://nftnow.com/feed",
+		"https://defipulse.com/blog/feed",
+		"https://medium.com/feed/pinata",
+		"https://defirate.com/feed",
+		"https://www.blocmates.com/blogmates?format=rss",
+		"https://defipocket.jp/index.php/feed",
 
+		// personal blog
+		"https://vitalik.ca/feed.xml",
+		"https://balajis.com/author/balajis/rss",
+
+		// daily news
 		"https://decrypt.co/feed",
-		"https://dailyhodl.com/feed",
 	}
 )
 

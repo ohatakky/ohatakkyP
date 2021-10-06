@@ -34,7 +34,7 @@ func (*RSSReader) Read(ctx context.Context, urls []string) []*Feed {
 			fp := gofeed.NewParser()
 			feed, err := fp.ParseURLWithContext(u, ctx)
 			if err != nil {
-				log.Println("error: occured by parseURL >>> ", err)
+				log.Println("error: occured by parseURL(", u, ") >>> ", err)
 				return
 			}
 			for _, item := range feed.Items {
